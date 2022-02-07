@@ -1,16 +1,12 @@
-# alarm_clock
+# Alarm Clock App
 
 A new Flutter project.
 
-## Getting Started
+## Features
+1. Adjust alarm by rotate by clock hands
+2. You can set more than 1 alarms
+3. clicking the notification alarm will direct you barchart that shows information about duration you click the notification
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Lack of features
+1. If the app is close than you click the notification it won't direct you to the barchart, but:
+2. if you running the app on background the notification will direct you to the barchart screen.
