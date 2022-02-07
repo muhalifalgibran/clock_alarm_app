@@ -2,6 +2,9 @@
 
 Flutter clock alarm app, that you can sets notification to reminds you in the time tou set.
 
+Android ✅
+iOS ✅
+
 ## Features 👏
 1. Adjust alarm by rotate by clock hands
 2. You can set more then one alarms
