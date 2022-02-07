@@ -6,10 +6,10 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class BarChartAlarm extends StatefulWidget {
-  final int id;
+  final String payload;
   const BarChartAlarm({
     Key? key,
-    required this.id,
+    required this.payload,
   }) : super(key: key);
 
   @override
@@ -22,15 +22,21 @@ class _BarChartAlarmState extends State<BarChartAlarm> {
   late Alarm alarm;
   double secondSpan = 0;
   String title = '';
+  DateTime date = DateTime.now();
 
   @override
   void initState() {
     super.initState();
-    alarm = _dx.getItem(widget.id).first;
+    // alarm = _dx.getItem(widget.id).first;
+    print('payload');
+    print(widget.payload);
+    date = DateTime.parse(widget.payload);
+
     secondSpan = double.parse(
-        (alarm.dateTime.difference(DateTime.now()).inSeconds).abs().toString());
-    title = "${alarm.hour}:${alarm.minute}";
-    title = DateFormat('kk:mm').format(alarm.dateTime);
+        (date.difference(DateTime.now()).inSeconds).abs().toString());
+
+    title = "${date.hour}:${date.minute}";
+    title = DateFormat('kk:mm').format(date);
   }
 
   @override

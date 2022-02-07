@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:alarm_clock/models/alarm.dart';
 import 'package:alarm_clock/utils/notification_util.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class ClockController extends GetxController {
   var wheelSize = 300;
@@ -69,8 +70,8 @@ class ClockController extends GetxController {
     update();
   }
 
-  removeAlarmById(int id) {
-    alarms.removeWhere((element) => element.id == id);
+  removeAlarmDateTime(DateTime time) {
+    alarms.removeWhere((element) => element.dateTime == time);
     update();
   }
 
@@ -106,11 +107,13 @@ class ClockController extends GetxController {
 
   setNotification() {
     int id = int.parse('${hour.value}${minute.value}');
+    String payload = DateFormat('yyyy-MM-dd kk:mm').format(getDateTime());
+
     NotificationUtil.showNotification(
         id: id,
         title: '⏳',
         body: "It's your time to shine!!",
-        payload: id.toString(),
+        payload: payload,
         time: getDateTime());
   }
 }

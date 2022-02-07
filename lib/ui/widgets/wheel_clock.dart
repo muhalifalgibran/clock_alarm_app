@@ -10,14 +10,13 @@ class WheelClock extends CustomPainter {
     double cy = size.height / 2;
     var center = Offset(cx, cy);
     double radius = 150;
-    double radiusCenter = 10;
 
     var clockCircle = Paint()..color = Colors.grey.shade800;
 
+    // make the clock and the indicator more atractive
     canvas.drawCircle(center, radius - 6, clockCircle);
 
     final paint = Paint();
-    final paintCenter = Paint();
 
     for (int i = 0; i < 60; i++) {
       double minute = 360 / 60 * i;
@@ -37,15 +36,6 @@ class WheelClock extends CustomPainter {
       double x2 = (radius - distance) * cos(vector.radians(minute));
       double y2 = (radius - distance) * sin(vector.radians(minute));
       final p2 = Offset(x2, y2);
-
-      // if (i == 59) {
-      //   print(x1);
-      //   print(y1);
-      //   print(x2);
-      //   print(y2);
-      //   canvas.drawCircle(Offset(x1, y1), radiusCenter, paintCenter);
-      //   canvas.drawCircle(Offset(x2, y2), radiusCenter, paintCenter);
-      // }
 
       canvas.drawLine(p1, p2, paint);
     }

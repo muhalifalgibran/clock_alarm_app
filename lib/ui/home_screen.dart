@@ -40,8 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
   // in this case is just by tap
   void listenNotification() =>
       NotificationUtil.onNotification.stream.listen((payload) async {
-        _dx.removeAlarmById(int.parse(payload ?? ''));
-        Get.to(() => BarChartAlarm(id: int.parse(payload ?? '')));
+        _dx.removeAlarmDateTime(DateTime.parse(payload ?? ''));
+        Get.to(() => BarChartAlarm(payload: payload ?? ''));
       });
 
   static const List<Widget> _widgetOptions = <Widget>[
