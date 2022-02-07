@@ -6,7 +6,7 @@ Android ✅
 iOS ✅
 
 ## Features 👏
-1. Adjust alarm by rotate by clock hands
+1. Adjust alarm by rotating the clock hands
 2. You can set more then one alarms
 3. clicking the notification alarm will be direct you to barchart that shows information about duration you click the notification
 
